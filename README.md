@@ -1,0 +1,4 @@
+cdn
+===
+
+common project resources
