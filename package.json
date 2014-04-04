@@ -1,0 +1,25 @@
+{
+  "name": "cdn",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Content Delivery Network for Project's Common Resources",
+  "keywords": [
+    "cdn",
+    "content",
+    "delivery",
+    "network",
+    "resources",
+    "javascript",
+    "lib"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erkobridee/cdn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/erkobridee/cdn/issues"
+  },
+  "homepage": "https://github.com/erkobridee/cdn"
+}
