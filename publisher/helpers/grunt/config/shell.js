@@ -1,7 +1,10 @@
 // https://github.com/sindresorhus/grunt-shell
-module.exports = {
 
-  buildDist: {
+module.exports = function(grunt) {
+
+grunt.config('shell', {
+
+  projectBuildProd: {
     command: 'grunt build',
     options: {
       stdout: true,
@@ -11,8 +14,8 @@ module.exports = {
     }
   },
 
-  cleanDist: {
-    command: 'grunt cleanup',
+  projectClean: {
+    command: 'grunt clean',
     options: {
       stdout: true,
       execOptions: {
@@ -20,5 +23,7 @@ module.exports = {
       }
     }
   }
+
+});
 
 };

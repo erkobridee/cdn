@@ -1,24 +1,24 @@
 module.exports = function(grunt) {
   'use strict';
 
+  require('time-grunt')(grunt);
+  require('jit-grunt')(grunt, {
+    gitclone: 'grunt-git'
+  })({
+    customTasksDir: 'helpers/grunt/tasks'
+  });
+
   var path = require('path'),
       cwd =  process.cwd();
 
-  grunt.log.writeln('\nloading grunt plugins and configs...');
-  require('load-grunt-config')(
-    grunt, {
-      configPath: path.join(cwd, 'helpers/grunt/config'),
-      config: {
-        mainPkg: grunt.file.readJSON(path.join(cwd, '../package.json'))
-      }
-    }
-  );
-  grunt.log.writeln('...done\n');
+  // Initialize config
+  grunt.initConfig({
+    pkg: require('./package.json'),
+    mainPkg: require(path.join(cwd, '../package.json'))
+  });
 
-  // load custom tasks
-  grunt.loadTasks('helpers/grunt/tasks'); // grunt helloworld
-  //grunt.task.run('helloworld');
-
+  // load tasks config per file
+  grunt.loadTasks('helpers/grunt/config');
 
   //--- grunt tasks
 
@@ -26,23 +26,23 @@ module.exports = function(grunt) {
 
   grunt.registerTask('init', [
     'jshint',
-    'clean:gh_pages_dir',
-    'gitclone:gh_pages'
+    'clean:branch_dir',
+    'gitclone:target'
   ]);
 
   grunt.registerTask('publish',  function(target) {
     var message = 'publish ',
         tasks = [
           'jshint',
-          'clean:gh_pages_content',
+          'clean:branch_dir_content',
           'copy:gitignore'
         ];
 
     tasks = tasks.concat([
-      'shell:buildDist',
-      'copy:projectDist',
-      'shell:cleanDist',
-      'githubPages:codeDist'
+      'shell:projectBuildProd',
+      'copy:projectProd',
+      'shell:projectClean',
+      'githubPages:prodCode'
     ]);
 
     grunt.log.writeln(message);
