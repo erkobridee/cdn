@@ -4,50 +4,77 @@ Content Delivery Network for Project's Common Resources
 
 > source content in `/src`
 
-## Available tools
+<!-- toc -->
 
-> Based on Node.js and Grunt.js
+* [Prerequisites](#prerequisites)
+* [Installation Guide](#installation-guide)
+* [Tools](#tools)
+  * [Dependencies](#dependencies)
+  * [Commands](#commands)
+* [License](#license)
 
-```bash
-$ [sudo] npm install -g grunt-cli
-```
-
-### dev
-
-> `/tools`
-
-* First install dependencies
-
-```bash
-$ npm install
-```
-
-* Grunt.js : available tasks
-
-  * `grunt dev` - start connect on `/src`
-
-  * `grunt build` - prepare files to publish on `gh-pages` branch
-
-  * `grunt dist` - preview what will publish on `gh-pages` branch
-
-  * `grunt cleanup` -  clean build files
+<!-- toc stop -->
 
 
-### gh-pages publisher
+## Prerequisites
 
-> `/publisher`
+* Must have [Git](http://git-scm.com/) installed
 
-* First install dependencies
+* Must have [node.js (at least v0.10.0)](http://nodejs.org/) installed with npm (Node Package Manager)
+
+* Must have [Gulp.js](http://gulpjs.com/) node package installed globally.  `[sudo] npm install -g gulp`
+
+
+## Installation Guide
+
+Enter the following commands in the terminal
 
 ```bash
-$ npm install
+git https://github.com/erkobridee/cdn.git
+cd cdn
+npm install
 ```
 
-* Grunt.js : available tasks
 
-  * `grunt publish` - build gh-pages files on `/dist`, commit new files and finally clean gh-pages files on `/dist`
+## Tools
+
+### Dependencies
+
+```bash
+npm install \
+  del \
+  gulp \
+  gulp-bump \
+  gulp-cached \
+  gulp-connect \
+  gulp-jshint \
+  gulp-lintspaces \
+  gulp-load-plugins \
+  gulp-print \
+  gulp-shell \
+  gulp-task-listing \
+  gulp-util \
+  jshint-stylish \
+  lazypipe \
+  open \
+  run-sequence \
+  yargs \
+  --save-dev
+```
+
+
+### Commands
+
+* `gulp` - development mode, start server on port 1337 and look `src` directory files
+
+* `gulp --release --preview` - generate deploy version on `dist` directory and start server on port 1337 looking to this directory
+
+* `gulp --publish` - publish deploy version files on `gh-pages` branch
+
+  * `gulp --init` - create local directory with github repository on gh-pages branch
 
 
 ## License
 
-MIT : [erkobridee.mit-license.org](http://erkobridee.mit-license.org)
+* MIT : [erkobridee.mit-license.org](http://erkobridee.mit-license.org/)
+
