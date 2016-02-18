@@ -22,79 +22,93 @@ function getVF(n, opt_precision) {
 $provide.value("$locale", {
   "DATETIME_FORMATS": {
     "AMPMS": [
-      "a.m.",
-      "p.m."
+      "AM",
+      "PM"
     ],
     "DAY": [
-      "Domingo",
-      "Lunes",
-      "Martes",
-      "Mi\u00e9rcoles",
-      "Jueves",
-      "Viernes",
-      "S\u00e1bado"
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
     ],
     "ERANAMES": [
-      "BCE",
-      "d.C."
+      "Before Christ",
+      "Anno Domini"
     ],
     "ERAS": [
-      "BCE",
-      "d.C."
+      "BC",
+      "AD"
     ],
     "FIRSTDAYOFWEEK": 6,
     "MONTH": [
-      "Qulla puquy",
-      "Hatun puquy",
-      "Pauqar waray",
-      "Ayriwa",
-      "Aymuray",
-      "Inti raymi",
-      "Anta Sitwa",
-      "Qhapaq Sitwa",
-      "Uma raymi",
-      "Kantaray",
-      "Ayamarq\u02bca",
-      "Kapaq Raymi"
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
     ],
     "SHORTDAY": [
-      "Dom",
-      "Lun",
-      "Mar",
-      "Mi\u00e9",
-      "Jue",
-      "Vie",
-      "Sab"
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat"
     ],
     "SHORTMONTH": [
-      "Qul",
-      "Hat",
-      "Pau",
-      "Ayr",
-      "Aym",
-      "Int",
-      "Ant",
-      "Qha",
-      "Uma",
-      "Kan",
-      "Aya",
-      "Kap"
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ],
+    "STANDALONEMONTH": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
     ],
     "WEEKENDRANGE": [
       5,
       6
     ],
-    "fullDate": "EEEE, d MMMM, y",
-    "longDate": "y MMMM d",
-    "medium": "y MMM d hh:mm:ss a",
-    "mediumDate": "y MMM d",
-    "mediumTime": "hh:mm:ss a",
-    "short": "dd/MM/y hh:mm a",
-    "shortDate": "dd/MM/y",
-    "shortTime": "hh:mm a"
+    "fullDate": "EEEE, MMMM d, y",
+    "longDate": "MMMM d, y",
+    "medium": "MMM d, y h:mm:ss a",
+    "mediumDate": "MMM d, y",
+    "mediumTime": "h:mm:ss a",
+    "short": "M/d/yy h:mm a",
+    "shortDate": "M/d/yy",
+    "shortTime": "h:mm a"
   },
   "NUMBER_FORMATS": {
-    "CURRENCY_SYM": "S/.",
+    "CURRENCY_SYM": "$",
     "DECIMAL_SEP": ".",
     "GROUP_SEP": ",",
     "PATTERNS": [
@@ -115,14 +129,15 @@ $provide.value("$locale", {
         "maxFrac": 2,
         "minFrac": 2,
         "minInt": 1,
-        "negPre": "-\u00a4\u00a0",
+        "negPre": "-\u00a4",
         "negSuf": "",
-        "posPre": "\u00a4\u00a0",
+        "posPre": "\u00a4",
         "posSuf": ""
       }
     ]
   },
-  "id": "qu-pe",
+  "id": "en-us",
+  "localeID": "en_US",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);
