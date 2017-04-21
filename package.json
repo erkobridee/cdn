@@ -5,8 +5,7 @@
   "description": "Content Delivery Network for Project's Common Resources",
   "scripts": {
     "postinstall": "gulp --init",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "outdated": "npm outdated --depth=0"
+    "test": "echo \"Error: no test specified\""
   },
   "keywords": [
     "cdn",
