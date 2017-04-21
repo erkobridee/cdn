@@ -20,7 +20,7 @@ Content Delivery Network for Project's Common Resources
 
 * Must have [Git](http://git-scm.com/) installed
 
-* Must have [node.js (at least v0.10.0)](http://nodejs.org/) installed with npm (Node Package Manager)
+* Must have [node.js (at least LTS)](http://nodejs.org/) installed with npm (Node Package Manager)
 
 * Must have [Gulp.js](http://gulpjs.com/) node package installed globally.  `[sudo] npm install -g gulp`
 
@@ -73,8 +73,8 @@ npm install \
 
   * `gulp --init` - create local directory with github repository on gh-pages branch
 
+* `npm outdated` - check outdated dependencies
 
 ## License
 
 * MIT : [erkobridee.mit-license.org](http://erkobridee.mit-license.org/)
-
